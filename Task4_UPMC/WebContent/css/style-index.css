@@ -1,0 +1,28 @@
+.post-content {
+    background: none repeat scroll 0 0 #FFffff;
+    opacity: 0.5;
+    margin: 0 auto;
+    margin-top: -70px;
+    text-align:center
+    position: relative;
+    width:100%;
+
+    
+}
+
+.thumbnail {
+    margin:0 auto;
+    text-align:center;
+}
+
+.wrapper {
+    text-align:center;
+}
+#myInput		{
+  width:130px;
+  -webkit-transition:width 0.3s ease-in-out;
+}
+#myInput:focus	{
+  width:100%;
+  -webkit-transition:width 0.5s ease-in-out;
+}
