@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Shipping Method</title>
+<title>ReviewOrder</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -42,8 +42,8 @@
 			<div class="col-md-8 column">
 				<h4>1. Shipping Address</h4>
 				<address>
-					<strong>Firstname Lastname</strong><br /> 123 Centre Avenue<br />
-					San Francisco, CA 94107
+					<strong>Meimei Han</strong><br /> 123 Centre Avenue<br /> San
+					Francisco, CA 94107
 				</address>
 				<div>
 					abc@123.com<br />(123) 456-7890
@@ -53,12 +53,72 @@
 						Address</button>
 				</div>
 
-				<h4>2. Shipping Method</h4>
-				<input type="radio" name="method" value="standard" /> Standard -
-				Arrives in 2-5 business days<br /> <input type="radio"
-					name="method" value="expedited" /> Expedited - Arrives in 1-2
-				business days <br>
-				<button type="button" class="btn btn-primary" style="float: right;">Continue</button>
+				<div>
+					<h4>2. Shipping Method</h4>
+				</div>
+
+				<div>
+					<p>
+						<b>Standard </b>- Arrives in 2-5 business days. <b>$5.99</b><br>
+						<a class="btn" href="#"> Shipping FAQs</a>
+					</p>
+					<br>
+					<button type="button" class="btn btn-default" style="float: right;">Change
+						Shipping Method</button>
+				</div>
+
+				<div>
+					<h4>3. Payment Method</h4>
+				</div>
+				<div>
+					<table class="Paymenttable">
+						<col width="200" />
+						<col width="200" />
+						<thead>
+							<tr>
+								<th><b>Card information</b></th>
+								<th><b>Billing addresses</b></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>xxxxxxxxxxxx6123</td>
+								<td>123 Centre Ave</td>
+							</tr>
+							<tr>
+								<td>Expires 09/16</td>
+								<td>Pittsburgh, PA, 15206</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<button type="button" class="btn btn-default" style="float: right;">Change
+					Payment</button>
+
+				<div>
+					<h4>4. Review products and submit order</h4>
+					<div>
+						<dl>
+							<dd>Once you submit your order, you cannot edit or cancel
+								online. If you have questions, please call customer service at
+								(412)xxxx</dd>
+						</dl>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+								<label><input type="checkbox"> I have read and
+									agree to the UPMC.com Terms of Use.</label>
+							</div>
+						</div>
+					</div>
+					<div>
+					<p>
+						<a class="btn" href="#"> << Back to cart</a>
+						<button type="submit" class="btn btn-primary" style="float: right;">Submit Order</button>
+					</p></div>
+				</div>
 			</div>
 
 			<div class="col-md-4 column">
