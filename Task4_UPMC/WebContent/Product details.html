@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 3, from LayoutIt!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/star-rating.css" rel="stylesheet">
+	<link href="css/spec.css" rel="stylesheet">
+	<link href="css/style-header.css" rel="stylesheet">
+	
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/star-rating.js"></script>
+	<script type="text/javascript">
+	function popup() {
+		window.open("write a review.html", "", "toolbar=no, height=800, width=800");
+		return false;
+	}
+	</script>
+	<script>
+	var substringMatcher = function(strs) {
+		  return function findMatches(q, cb) {
+		    var matches, substrRegex;
+		 
+		    // an array that will be populated with substring matches
+		    matches = [];
+		 
+		    // regex used to determine if a string contains the substring `q`
+		    substrRegex = new RegExp(q, 'i');
+		 
+		    // iterate through the pool of strings and for any string that
+		    // contains the substring `q`, add it to the `matches` array
+		    $.each(strs, function(i, str) {
+		      if (substrRegex.test(str)) {
+		        // the typeahead jQuery plugin expects suggestions to a
+		        // JavaScript object, refer to typeahead docs for more info
+		        matches.push({ value: str });
+		      }
+		    });
+		 
+		    cb(matches);
+		  };
+		};
+		 
+		var states = ['Aspirin', 'SleepCaps'
+		];
+		 
+		$('#scrollable-dropdown-menu .typeahead').typeahead({
+		  hint: true,
+		  highlight: true,
+		  minLength: 1
+		},
+		{
+		  name: 'states',
+		  displayKey: 'value',
+		  source: substringMatcher(states)
+		});
+		
+		$('input.typeahead').on('typeahead:selected', function(event, selection) {
+			  
+			  // the second argument has the info you want
+			  window.location = 'Searchresults.html';
+			  
+			  // clearing the selection requires a typeahead method
+			  $(this).typeahead('setQuery', '');
+			});
+		
+		$('input.typeahead').on('keyup', this, function (event) {
+	        if (event.keyCode == 13) {
+	        	 window.location = 'Searchresults.html';
+	        }
+	    });
+
+		$(document)
+				.ready(
+						function() {
+							$('#registrationForm')
+									.bootstrapValidator(
+											{
+												// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+												feedbackIcons : {
+													valid : 'glyphicon glyphicon-ok',
+													invalid : 'glyphicon glyphicon-remove',
+													validating : 'glyphicon glyphicon-refresh'
+												},
+												fields : {
+													username : {
+														message : 'The username is not valid',
+														validators : {
+															notEmpty : {
+																message : 'The username is required and cannot be empty'
+															},
+															stringLength : {
+																min : 6,
+																max : 30,
+																message : 'The username must be more than 6 and less than 30 characters long'
+															},
+															regexp : {
+																regexp : /^[a-zA-Z0-9]+$/,
+																message : 'The username can only consist of alphabetical and number'
+															},
+															different : {
+																field : 'password',
+																message : 'The username and password cannot be the same as each other'
+															}
+														}
+													},
+													email : {
+														validators : {
+															notEmpty : {
+																message : 'The email address is required and cannot be empty'
+															},
+															emailAddress : {
+																message : 'The email address is not a valid'
+															}
+														}
+													},
+													password : {
+														validators : {
+															notEmpty : {
+																message : 'The password is required and cannot be empty'
+															},
+															different : {
+																field : 'username',
+																message : 'The password cannot be the same as username'
+															},
+															stringLength : {
+																min : 8,
+																message : 'The password must have at least 8 characters'
+															}
+														}
+													}
+
+												}
+											});
+							$('#loginForm')
+									.bootstrapValidator(
+											{
+												// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+												feedbackIcons : {
+													valid : 'glyphicon glyphicon-ok',
+													invalid : 'glyphicon glyphicon-remove',
+													validating : 'glyphicon glyphicon-refresh'
+												},
+												fields : {
+													username : {
+														message : 'The username is not valid',
+														validators : {
+															notEmpty : {
+																message : 'The username is required and cannot be empty'
+															},
+															stringLength : {
+																min : 6,
+																max : 30,
+																message : 'The username must be more than 6 and less than 30 characters long'
+															},
+															regexp : {
+																regexp : /^[a-zA-Z0-9]+$/,
+																message : 'The username can only consist of alphabetical and number'
+															},
+															different : {
+																field : 'password',
+																message : 'The username and password cannot be the same as each other'
+															}
+														}
+													},
+													email : {
+														validators : {
+															notEmpty : {
+																message : 'The email address is required and cannot be empty'
+															},
+															emailAddress : {
+																message : 'The email address is not a valid'
+															}
+														}
+													},
+													password : {
+														validators : {
+															notEmpty : {
+																message : 'The password is required and cannot be empty'
+															},
+															different : {
+																field : 'username',
+																message : 'The password cannot be the same as username'
+															},
+															stringLength : {
+																min : 8,
+																message : 'The password must have at least 8 characters'
+															}
+														}
+													}
+
+												}
+											});
+							
+						});
+	</script>
+	
+
+	
+</head>
+
+<body>
+<Nav  class = "navbar navbar-default navbar-fixed-top"  role = "navigation" > 
+  <div  class = "container-fluid" > 
+    <! - Brand and toggle get grouped for better mobile display -> 
+    <div  class = "navbar-header " > 
+      <button  type = "button"  class = "navbar-toggle collapsed"  data-toggle= "collapse"  data-target= "#bs-example-navbar-collapse-1" > 
+        <span  class= "sr-only" > Toggle navigation </span> 
+        <span  class= "icon-bar" ></span> 
+        <span  class= "icon-bar" ></span> 
+        <span  class= "icon-bar" ></span> 
+      </button> 
+      <a  class= "navbar-brand"  href= "#" > UPMC Pharmacy </a> 
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="#">Health Info</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop Products<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Personal Care</a></li>
+            <li><a href="#">Medicine & Treatment</a></li>
+            <li class="divider"></li>
+            <li><a href="#">All Products</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+      <div class="navbar-form navbar-left"   id="search">
+        <div id="scrollable-dropdown-menu">
+  <input class="typeahead" size="40" type="text" placeholder="Search" >
+  
+</div>
+       
+      </div>
+     
+      <div class="navbar-form navbar-right">
+      
+					<button type="submit" data-toggle="modal" data-target="#myModal"
+						class="btn btn-success">Sign in</button>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+            <li><a href="Shopping Cart.html">My Shopping Cart</a></li>
+            
+          </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">Have you an account?</h4>
+				</div>
+				<div class="modal-body">
+					<div class="well">
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+							<li><a href="#create" data-toggle="tab">Create Account</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane active in" id="login">
+								<form id="loginForm" method="POST">
+									<fieldset>
+										<legend></legend>
+										<div class="form-group">
+											<label class="control-label">Email address</label>
+											<div class="controls">
+												<input type="text" class="form-control" name="email" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label">Password</label>
+											<div class="controls">
+												<input type="password" class="form-control" name="password" />
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<div class="control-group">
+												<!-- Button -->
+												<div class="controls">
+													<button class="btn btn-success">Login</button>
+												</div>
+											</div>
+										</div>
+										<a href = "#"> Forget Password </a>
+									</fieldset>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="create">
+								<form id="registrationForm" method="post">
+									<legend></legend>
+									<div class="form-group">
+										<label class="control-label">Username</label>
+										<div class="controls">
+											<input type="text" class="form-control" name="username" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label">Email address</label>
+										<div class="controls">
+											<input type="text" class="form-control" name="email" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label">Password</label>
+										<div class="controls">
+											<input type="password" class="form-control" name="password" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="controls">
+											<!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+											<button type="submit" class="btn btn-success">Sign
+												up</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br><br><br>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#">Home</a> <span class="divider">/</span>
+				</li>
+				<li>
+					<a href="#">Shop Products</a> <span class="divider">/</span>
+				</li>
+				<li>
+					<a href="#">Medicine and Treatment</a> <span class="divider">/</span>
+				</li>
+				<li class="active">
+					Bayer Aspirin Regimen Pain Reliever
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-6 column">
+			<img alt="420x420" src="http://i.walmartimages.com/i/p/00/31/28/43/53/0031284353642_500X500.jpg">
+		</div>
+		<div class="col-md-4 column">
+			<h3>
+				<strong>Bayer Aspirin Regimen Pain Reliever</strong>
+			</h3>
+			<p>
+			    <input id="input-21a" value="4" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
+			</p>
+			<a title="popup" onclick="return popup()">Write My Review</a>
+			<hr>
+			<p class="text-left">
+				<strong>Price</strong>: $11.99
+			</p>
+			<hr>
+			<div class="quantity-input">
+				<div class = "row clearfix">
+					<div class = "col-md-5 column">
+						<form>
+							<strong>Quantity:</strong>&nbsp;&nbsp;<input type="text" name="quantities" size="3">
+						</form>
+					</div>
+				<div class = "col-md-7 column">
+					<span class="label label-success">In Stock</span>
+			    </div>
+			</div>
+			</div> 
+			<hr>
+			<div class="add to cart">
+				<button type="button" class="btn btn-primary custom">Add to Cart</button>
+				<br>
+				<br>
+				<button type="button" class="btn btn-info custom">Find in a Store</button>
+			</div>
+		
+			<hr>
+			<img alt="facebook" src="https://www.facebook.com/images/fb_icon_325x325.png" width="30" height="30">  <img alt="twitter" src="https://blog.twitter.com/sites/all/themes/gazebo/img/ios_homescreen_icon.png" width="30" height="30">  <img alt="pinterest" src="http://img3.wikia.nocookie.net/__cb20140925232226/carebears/images/c/c4/Pinterest-icon.png" width="30" height="30"> <img alt="google+" src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/512/Google-plus-icon.png" width="30" height="30">
+		</div>
+		
+		<div class="col-md-2 column">
+			<img alt="special-offer" src="http://www.paragonautofinishing.co.uk/media/special.png" width="180" height="100">
+			<br>
+			<br>
+			<br>
+			<img alt="shipping" src="http://www.iconpng.com/png/windows8_icons2/free_shipping.png" width="100" height="100"> <p>FREE SHIPPING on orders over $35!</p>
+			<br>
+			<br>
+			<img alt="deal" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/price_tag.png" width="100" height="100"> <p>BUY 1 GET 1 50% OFF WITH UPMC CARD</p>
+		</div>
+	</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="tabbable" id="tabs-942812">
+				<ul class="nav nav-tabs">
+					<li>
+						<a href="#panel-972534" data-toggle="tab">Overview</a>
+					</li>
+					<li class="active">
+						<a href="#panel-101117" data-toggle="tab">Ingredients</a>
+					</li>
+					<li>
+						<a href="#panel-3" data-toggle="tab">Directions</a>
+					</li>
+					<li>
+						<a href="#panel-4" data-toggle="tab">Warnings</a>
+					</li>
+					<li>
+						<a href="#panel-5" data-toggle="tab">Rating and Reviews</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+				<br>
+					<div class="tab-pane" id="panel-972534">
+						<ul>
+			    			<li>
+								<strong>Health Concern</strong>: Arthritis, Muscle Pain
+							</li>
+							<li>
+								<strong>Product Form</strong>: Tablet
+							</li>
+								<li>
+								<strong>Suggested Age</strong>: 18 Years and Up
+							</li>
+							<li>
+								<strong>Size</strong>: 300 Coeated Capsules
+							</li>
+							<li>
+								<strong>Place of Production</strong>: Made in Spain
+							</li>
+						</ul>
+					</div>
+					<br>
+					<div class="tab-pane active" id="panel-101117">
+						<span class="label label-primary">Active Ingredients</span>
+						<br>
+						<br>
+						<ul>
+							<li>
+								In Each Tablet: Aspirin (81 mg) (NSAID)
+							</li>
+						</ul>
+						<span class="label label-primary">Inactive Ingredients</span>
+						<br>
+						<br>
+						<ul>
+							<li>
+								Black Iron Oxide
+							</li>
+							<li>	
+								Brown Iron Oxide
+							</li>
+							<li>	
+								Carnauba Wax 
+							</li>	
+							<li>
+								Corn Starch
+							</li>
+							<li>
+								D&C Yellow 10 Aluminum Lake 
+							</li>
+							<li>	
+								FD&C Yellow 6 Aluminum Lake
+							</li>
+							<li>	
+								Hypromellose, Methacrylic Acid 
+							</li>
+							<li>	
+								Copolymer Type C 
+							</li>
+							<li>	
+								Polysorbate 80 
+							</li>
+							<li>	
+								Powdered Cellulose 
+							</li>
+							<li>	
+								Propylene Glycol 
+							</li>
+							<li>	
+								Shellac
+							</li>
+							<li>	
+								Sodium Lauryl Sulfate 
+							</li>
+							<li>	
+								Triacetin, Triethyl Citrate
+							</li>
+						</ul>
+					</div>
+
+					<div class="tab-pane" id="panel-3">
+						<p>
+							Drink a full glass of water with each dose.
+						</p>
+						<span class="label label-primary">Adults and children 12 years and over</span>
+						<p>
+							Take 4 to 8 tablets every 4 hours not to exceed 48 tablets in 24 hours unless directed by a doctor.
+						</p>
+						<span class="label label-primary">Children under 12 years</span>
+						<p>
+							Consult a doctor
+						</p>
+						<span class="label label-primary">Other Information</span>
+						<p>
+							Store at room temperature
+						</p>
+					</div>
+					<div class="tab-pane" id="panel-4">
+						<p>
+							Aspirin is not appropriate for everyone, so be sure to talk to your doctor before you begin an aspirin regimen.<br>
+							<br>
+							<strong>Reye's syndrome</strong>: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product.  When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye's syndrome, a rare but serious illness.<br>
+							<br>
+							<strong>Allergy alert</strong>:  Aspirin may cause a severe allergic reaction which may include:
+						</p>
+						<ul>
+							<li>
+								Hives
+							</li>
+							<li>
+								Facial swelling
+							<li>
+								Asthma (wheezing)
+							</li>
+							<li>
+								Shock
+							</li>
+						</ul>
+						<p>
+							<strong>Stomach bleeding warning</strong>:  This product contains an NSAID, which may cause severe stomach bleeding.  The chance is higher if you
+						</p>
+						<ul>
+							<li>
+								Are age 60 or older
+							</li>
+							<li>	
+								Have had stomach ulcers or bleeding problems
+							</li>
+							<li>	
+								Take a blood thinning (anticoagulant) or steroid drug 
+							</li>	
+							<li>
+								Take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others)
+							</li>
+							<li>
+								Have 3 or more alcoholic drinks every day while using this product 
+							</li>
+							<li>	
+								Take more or for a longer time than directed
+							</li>
+						</ul>
+							<p>
+							<strong>Do not use</strong> if you are allergic to aspirin or any other pain reliever/fever reducer.<br>
+							<strong>Ask a doctor before use if</strong>
+							</p>
+						<ul>
+							<li>
+								Stomach bleeding warning applies to you
+							</li>
+							<li>	
+								You have a history of stomach problems, such as heartburn
+							</li>
+							<li>	
+								You have high blood pressure, heart disease, liver cirrhosis, or kidney disease
+							</li>	
+							<li>
+								You are taking a diuretic
+							</li>
+							<li>
+								You have asthma
+							</li>
+						</ul>
+						<p>	
+							<strong>Ask a doctor or pharmacist before use if you are</strong>taking a prescription drug for
+						</p>
+						<ul>
+							<li>
+								Gout
+							</li>
+							<li>	
+								Diabetes
+							</li>
+							<li>	
+								Arthritis
+							</li>	
+						</ul>
+						<p>
+							<strong>Stop use and ask a doctor if</strong>
+						</p>
+						<ul>
+							<li>
+								An allergic reaction occurs. Seek medical help right away
+							</li>
+							<li>	
+								You experience any of the following signs of stomach bleeding:
+							</li>
+								<ul>
+									<li>
+										Feel faint
+									</li>
+									<li>	
+										Vomit blood
+									</li>
+									<li>
+										Have bloody or black stools
+									</li>
+									<li>	
+										Have stomach pain that does not get better
+									</li>
+								</ul>
+							<li>	
+								Pain gets worse or lasts more than 10 days
+							</li>
+							<li>
+								Redness or swelling is present
+							</li>
+							<li>	
+								New symptoms occur
+							</li>
+							<li>	
+								Ringing in the ears or a loss of hearing occurs
+							</li>
+						</ul>
+						<p>
+							<strong>If pregnant or breast-feeding</strong>, ask a health professional before use.  It is especially important not to use aspirin during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery.<br>
+							<br>
+							<strong>Keep out of reach of children</strong>. In case of overdose, get medical help or contact a Poison Control Center right away.
+						</p>
+					</div>
+					<div class="tab-pane" id="panel-5">
+						<div class = "row clearfix">
+							<div class = "col-md-4 column">
+								<p>Average Rating</p>
+								<input id="input-21a" value="4" type="number" class="rating" min=0 max=5 step=0.5 data-size="sm" data-readonly="true">
+								<br>
+								<button type="button" class="btn btn-primary">Write a Review</button>
+							</div>
+							<div class = "col-md-8 column">
+								<input id="input-21a" value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
+								<p>
+									<strong>Highly Effective Product for Adults</strong><br>
+									I've used this cherry flavored low-dose aspirin for years for everything from a sore throat (let several dissolve in your mouth), to fevers, to sinus pressure, to headaches (I usually take a few with a no-food-coloring, no-artificial-flavoring Gatorade), to muscle aches. I may start with just two tablets, wait 15 minutes, and take more if I need them, but often I don't. Never have I experienced any bad side-effects, and that is very unusual for me because I am very, very sensitive to medications. The cherry flavored tablets are much easier for me to take, even easier than the orange flavored tablets. I usually purchase 4 or more bottles at a time, as I keep one in my purse, one in my nightstand, one in my travel bag, and one in the medicine cabinet. When friends ask if I have anything for a headache, I offer them this cherry-flavored low-dose aspirin, and even if they ask for 8 of them, I feel okay giving them this product as I believe it is very safe and effective.
+								</p>
+								<p class="text-muted">
+									<small>Written by John S from Pittsburgh | Sep 25, 2014</small>
+								</p>
+								<hr>
+								<input id="input-21a" value="3" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
+								<p>
+									<strong>cardiac and stroke prevention</strong><br>
+									Daily use to prevent cardiac and stroke events. Palatable, easy to take, with lower risk of side effects.
+								</p>
+								<p class="text-muted">
+									<small>Written by Patrick L from New York | Aug 15, 2014</small>
+								</p>
+				
+			   				</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<br>
+	<hr>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-center">
+				You might also like:
+			</h3>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://herbal2wellness.com/wp-content/uploads/images/41oRtQ9Co5L.jpg" width="120" height="120">
+						<div class="caption">
+							<h3>
+								Genuine Bayer Aspirin 325 MG Tablets
+							</h3>
+							<p>
+								$9.49<br>
+								<a>In Stock</a>
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Add to Cart</a> <a class="btn" href="#">View Details</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://i.walmartimages.com/i/p/00/31/28/43/10/0031284310105_500X500.jpg" width="190" height="195">
+						<div class="caption">
+							<h3>
+								Bayer Chewable Aspirin Orange Flavor
+							</h3>
+							<p>
+								$5.89<br>
+								<a>In Stock</a>
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Add to Cart</a> <a class="btn" href="#">View Details</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src="http://www.gianteagle.com/ProductImages/PRODUCT_NODE_962/312843132313.jpg" width="190" height="195">
+						<div class="caption">
+							<h3>
+								Bayer Chewable Aspirin Cherry Flavor
+							</h3>
+							<p>
+								$2.39<br>
+								<a>In Stock</a>
+							</p>
+							<p>
+								<a class="btn btn-primary" href="#">Add to Cart</a> <a class="btn" href="#">View Details</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr>
+<footer>
+		<p class="pull-right">
+			<a href="#">Back to top</a>
+		</p>
+		<p>
+			&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
+				href="#">Terms</a>
+		</p>
+	</footer>
+</body>
+</html>
