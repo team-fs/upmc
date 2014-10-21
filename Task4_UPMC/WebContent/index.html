@@ -57,7 +57,7 @@ $(function(){
 						<h1></h1>
 						<p></p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="Searchresults.html" role="button">Learn
+							<a class="btn btn-lg btn-primary" href="productlist.html" role="button">Learn
 								more</a>
 						</p>
 					</div>
@@ -154,7 +154,7 @@ $(function(){
 
 		<div class="row clearfix" id="allergy">
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -163,7 +163,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -172,7 +172,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -181,7 +181,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -190,7 +190,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -199,7 +199,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/allergy-food.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/allergy-food.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -212,7 +212,7 @@ $(function(){
 
 		<div class="row clearfix" id="flu">
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -221,7 +221,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -230,7 +230,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -239,7 +239,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -248,7 +248,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -257,7 +257,7 @@ $(function(){
 				</div>
 			</div>
 			<div class="col-md-2 column">
-				<a href="Searchresults.html"> <img alt="140x140" src="img/cold.jpg"
+				<a href="productlist.html"> <img alt="140x140" src="img/cold.jpg"
 					class="img-thumbnail" /></a>
 				<div class="wrapper">
 					<div class="caption post-content">
@@ -330,28 +330,28 @@ $(function(){
 	<script>
 	$('#allergy').hide();
 	$('#flu').hide();
-	$('#al').click(function (e) {
+	$('#al').hover(function (e) {
 	    e.preventDefault();
 	    $('#allergy').slideDown();
 	    $('#flu').slideUp();
 	    
 	    location.href = "#cat";   
 	});
-	$('#fa').click(function (e) {
+	$('#fa').hover(function (e) {
 	    e.preventDefault();
 	    $('#flu').slideDown();
  	    $('#allergy').slideUp();
 	    
 	    location.href = "#cat";   
 	});
-	$('#ca').click(function (e) {
+	$('#ca').hover(function (e) {
 	    e.preventDefault();
 	    $('#allergy').slideDown();
 	    $('#flu').slideUp();
 	    
 	    location.href = "#cat";   
 	});
- 	$('#fl').click(function (e) {
+ 	$('#fl').hover(function (e) {
  	    e.preventDefault();
  	   $('#flu').slideDown();
  	    $('#allergy').slideUp();
