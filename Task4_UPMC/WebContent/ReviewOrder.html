@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReviewOrder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+<!--script src="js/less-1.3.3.min.js"></script-->
+<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="img/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="img/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="img/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="img/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-8 column">
+				<h4>1. Shipping Address</h4>
+				<address>
+					<strong>Meimei Han</strong><br /> 123 Centre Avenue<br /> San
+					Francisco, CA 94107
+				</address>
+				<div>
+					abc@123.com<br />(123) 456-7890
+				</div>
+				<div>
+					<button type="button" class="btn btn-default" style="float: right;">Change
+						Address</button>
+				</div>
+
+				<div>
+					<h4>2. Shipping Method</h4>
+				</div>
+
+				<div>
+					<p>
+						<b>Standard </b>- Arrives in 2-5 business days. <b>$5.99</b><br>
+						<a class="btn" href="#"> Shipping FAQs</a>
+					</p>
+					<br>
+					<button type="button" class="btn btn-default" style="float: right;">Change
+						Shipping Method</button>
+				</div>
+
+				<div>
+					<h4>3. Payment Method</h4>
+				</div>
+				<div>
+					<table class="Paymenttable">
+						<col width="200" />
+						<col width="200" />
+						<thead>
+							<tr>
+								<th><b>Card information</b></th>
+								<th><b>Billing addresses</b></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>xxxxxxxxxxxx6123</td>
+								<td>123 Centre Ave</td>
+							</tr>
+							<tr>
+								<td>Expires 09/16</td>
+								<td>Pittsburgh, PA, 15206</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br>
+				<button type="button" class="btn btn-default" style="float: right;">Change
+					Payment</button>
+
+				<div>
+					<h4>4. Review products and submit order</h4>
+					<div>
+						<dl>
+							<dd>Once you submit your order, you cannot edit or cancel
+								online. If you have questions, please call customer service at
+								(412)xxxx</dd>
+						</dl>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+								<label><input type="checkbox"> I have read and
+									agree to the UPMC.com Terms of Use.</label>
+							</div>
+						</div>
+					</div>
+					<div>
+					<p>
+						<a class="btn" href="#"> << Back to cart</a>
+						<button type="submit" class="btn btn-primary" style="float: right;">Submit Order</button>
+					</p></div>
+				</div>
+			</div>
+
+			<div class="col-md-4 column">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Order Summary</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Item Subtotal</td>
+							<td>$16.98</td>
+						</tr>
+						<tr>
+							<td>Estimated Shipping</td>
+							<td>$5.99</td>
+						</tr>
+						<tr>
+							<td>Estimated Total</td>
+							<td><strong>$22.97</strong></td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="button" class="btn btn-primary" style="float: right;">Submit Order</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
