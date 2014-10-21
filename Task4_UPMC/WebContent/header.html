@@ -178,7 +178,7 @@
 		$('input.typeahead').on('typeahead:selected', function(event, selection) {
 			  
 			  // the second argument has the info you want
-			  window.location = 'Checkout.html';
+			  window.location = 'Searchresults.html';
 			  
 			  // clearing the selection requires a typeahead method
 			  $(this).typeahead('setQuery', '');
@@ -186,7 +186,7 @@
 		
 		$('input.typeahead').on('keyup', this, function (event) {
 	        if (event.keyCode == 13) {
-	        	 window.location = 'Checkout.html';
+	        	 window.location = 'Searchresults.html';
 	        }
 	    });
 
