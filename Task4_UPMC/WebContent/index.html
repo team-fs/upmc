@@ -1,21 +1,18 @@
-<link class="cssdeck" rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="//cdn.jsdelivr.net/fontawesome/4.1.0/css/font-awesome.min.css" />
-<link rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css"
-	class="cssdeck">
-<link rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
-<link href="//getbootstrap.com/examples/carousel/carousel.css"
-	rel="stylesheet">
+<link class="cssdeck" rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" class="cssdeck">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+<link href="css/carousel.css" rel="stylesheet">
 <link href="css/style-index.css" rel="stylesheet">
 <body>
 
-	<!-- NAVBAR
+	<!-- Copy Start>
 ================================================== -->
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script class="cssdeck" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+	<script type="text/javascript" src="js/typeahead.bundle.js"></script>
 	<script> 
 $(function(){
   $("#header").load("header.html"); 
@@ -24,7 +21,8 @@ $(function(){
 </script>
 	</script>
 	<div id="header"></div>
-
+<!-- Copy End>
+================================================== -->
 	<br>
 	<br>
 
@@ -47,8 +45,8 @@ $(function(){
 						<h1></h1>
 						<p></p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Sign
-								up today</a>
+							<a class="btn btn-lg btn-primary" href="#" role="button"
+								data-toggle="modal" data-target="#myModal">Sign up today</a>
 						</p>
 					</div>
 				</div>
@@ -73,7 +71,7 @@ $(function(){
 						<h1></h1>
 						<p></p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Browse
+							<a class="btn btn-lg btn-primary" href="#cat" role="button">Browse
 								gallery</a>
 						</p>
 					</div>
@@ -86,18 +84,14 @@ $(function(){
 			data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 	</div>
 	<!-- /.carousel -->
-
-
-
-
-
-
 	<div class="container">
 
 
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<div class="row">
+				<div class="row" id="cat">
+					<br>
+					<br>
 					<div class="col-xs-6 col-sm-3 placeholder">
 
 						<div class="thumbnail" id="al">
@@ -327,27 +321,13 @@ $(function(){
 			</div>
 		</div>
 	</div>
-	<!--Remaining section-->
+	<!--Copy Start-->
 	<div id="footer"></div>
-	<!-- FOOTER -->
 
-	<!-- /.container -->
-	<!-- Button trigger modal -->
-
-
-
-
-	<!-- Bootstrap core JavaScript
+	<!-- Copy End>
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script class="cssdeck"
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script class="cssdeck"
-		src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript"
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-	<script type="text/javascript"
-		src="//twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+	
 	<script>
 	$('#allergy').hide();
 	$('#flu').hide();
@@ -356,14 +336,14 @@ $(function(){
 	    $('#allergy').slideDown();
 	    $('#flu').slideUp();
 	    
-	    location.href = "#al";   
+	    location.href = "#cat";   
 	});
  	$('#fl').click(function (e) {
  	    e.preventDefault();
  	   $('#flu').slideDown();
  	    $('#allergy').slideUp();
  	    
- 	   location.href = "#al"; 
+ 	   location.href = "#cat"; 
  	});
 	$(function() {
 	    $(".thumbnail").hover(function() {
