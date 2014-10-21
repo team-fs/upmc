@@ -9,24 +9,23 @@
         <span  class= "icon-bar" ></span> 
         <span  class= "icon-bar" ></span> 
       </button> 
-      <a  class= "navbar-brand"  href= "#" > Brand </a> 
+      <a  class= "navbar-brand"  href= "#" > UPMC Pharmacy </a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Health Info</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop Products<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Personal Care</a></li>
+            <li><a href="#">Medicine & Treatment</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">All Products</a></li>
+            
           </ul>
         </li>
       </ul>
@@ -92,6 +91,7 @@
 												</div>
 											</div>
 										</div>
+										<a href = "#"> Forget Password </a>
 									</fieldset>
 								</form>
 							</div>
@@ -161,7 +161,7 @@
 		  };
 		};
 		 
-		var states = ['Aspirn', 'SleepCaps'
+		var states = ['Aspirin', 'SleepCaps'
 		];
 		 
 		$('#scrollable-dropdown-menu .typeahead').typeahead({
@@ -178,7 +178,7 @@
 		$('input.typeahead').on('typeahead:selected', function(event, selection) {
 			  
 			  // the second argument has the info you want
-			  alert(selection.value);
+			  window.location = 'Checkout.html';
 			  
 			  // clearing the selection requires a typeahead method
 			  $(this).typeahead('setQuery', '');
@@ -186,7 +186,7 @@
 		
 		$('input.typeahead').on('keyup', this, function (event) {
 	        if (event.keyCode == 13) {
-	        	alert('aaa');
+	        	 window.location = 'Checkout.html';
 	        }
 	    });
 
