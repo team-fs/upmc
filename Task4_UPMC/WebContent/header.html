@@ -9,20 +9,37 @@
         <span  class= "icon-bar" ></span> 
         <span  class= "icon-bar" ></span> 
       </button> 
-      <a  class= "navbar-brand"  href= "#" > UPMC Pharmacy </a> 
+     
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
       <ul class="nav navbar-nav">
+      <li><img alt="logo" id="logo" src="img/logo.png"></li>
         <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="#">Health Info</a></li>
+        <li id="hi"><a href="#">Health Info</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop Products<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="productlist.html">Beauty</a></li>
-            <li><a href="productlist.html">Personal Care</a></li>
-            <li><a href="productlist.html">Medicine & Treatment</a></li>
+             <li><a href="productlist.html">Cough, Cold & Flu</li>
+             <li><a href="productlist.html">Pain Relief & Management</li>
+             <li><a href="productlist.html">Allergy & Sinus</li>
+             <li><a href="productlist.html">Digestive Health & Nausea</li>
+             <li><a href="productlist.html">Children's Health Care</li>
+             <li><a href="productlist.html">Home Tests & Monitoring</li>
+             <li><a href="productlist.html">Stop Smoking</li>
+             <li><a href="productlist.html">Skin Ailments</li>
+             <li><a href="productlist.html">Homeopathic Remedies</li>
+             <li><a href="productlist.html">First Aid</li>
+             <li><a href="productlist.html">Pill Organization</li>
+             <li><a href="productlist.html">Eye Care</li>
+             <li><a href="productlist.html">Ear, Nose & Throat Care</li>
+             <li><a href="productlist.html">Foot Care</li>
+             <li><a href="productlist.html">Sleep & Snoring Aids</li>
+             <li><a href="productlist.html">Supports & Braces</li>
+             <li><a href="productlist.html">Feminine Care</li>
+             <li><a href="productlist.html">Incontinence</li>
             <li class="divider"></li>
             <li><a href="productlist.html">All Products</a></li>
             
@@ -34,8 +51,15 @@
   <input class="typeahead" size="40" type="text" placeholder="Search" >
   
 </div>
+
        
       </div>
+       <ul class=" navbar-form nav navbar-nav">
+        <button type="submit" id = "searchButton"
+						class="btn btn-success">Go</button>
+        </ul>
+  
+
      
       <div class="navbar-form navbar-right">
       
@@ -92,7 +116,7 @@
 											<div class="control-group">
 												<!-- Button -->
 												<div class="controls">
-													<button class="btn btn-success">Login</button>
+													<button type="submit" class="btn btn-success">Login</button>
 												</div>
 											</div>
 										</div>
@@ -194,10 +218,14 @@
 	        	 window.location = 'Searchresults.html';
 	        }
 	    });
-
+		$('#searchButton').click(function (e) {
+			 window.location = 'Searchresults.html';
+		});
 		$(document)
 				.ready(
+						
 						function() {
+							
 							$('#registrationForm')
 									.bootstrapValidator(
 											{
@@ -316,6 +344,9 @@
 
 												}
 											});
+							
+							
+						
 							
 						});
 	</script>
