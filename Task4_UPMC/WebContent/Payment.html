@@ -14,7 +14,8 @@
 
 <link class="cssdeck" rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css" />
-<link rel="stylesheet" href="css/bootstrap-responsive.min.css" class="cssdeck">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css"
+	class="cssdeck">
 <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
 <link href="css/carousel.css" rel="stylesheet">
 <link href="css/style-index.css" rel="stylesheet">
@@ -27,35 +28,44 @@
 	<script class="cssdeck" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="js/typeahead.bundle.js"></script>
-	<script> 
-$(function(){
-  $("#header").load("header.html"); 
-  $("#footer").load("footer.html"); 
-});
-</script>
+	<script>
+		$(function() {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
 	<div id="header"></div>
-<!-- Copy End>
+	<!-- Copy End>
 
 <!-- Fav and touch icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="img/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="img/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="img/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed"
-	href="img/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="img/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="img/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="img/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed"
+		href="img/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="img/favicon.png">
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
 	<div class="container">
 		<div class="row clearfix">
 			<br> <br> <br> <br>
+			<ul class="nav nav-pills">
+				<li class="active" ><a href="Shipping.html">Shipping Address >> </a></li>
+				<li><a href="ShippingMethod.html">Shipping Method >> </a></li>
+				<li><a href="Payment.html">Payment Information >> </a></li>
+				<li><a href="ReviewOrder.html">Order Review >> </a></li>
+				<li><a href="#">Order Confirmation </a></li>
+			</ul>
+
+			<hr>
 			<div class="col-md-8 column">
 				<div>
 					<h4>1. Shipping Address</h4>
@@ -66,7 +76,8 @@ $(function(){
 					</address>
 					abc@123.com <br />(123) 456-7890
 
-					<button onclick="location.href='Shipping.html'" type="button" class="btn btn-default" style="float: right;">Change
+					<button onclick="location.href='Shipping.html'" type="button"
+						class="btn btn-default" style="float: right;">Change
 						Address</button>
 					<br>
 					<div>
@@ -76,8 +87,9 @@ $(function(){
 							<b>Standard </b>- Arrives in 2-5 business days. <b>$5.99</b><br>
 							<a class="btn" href="#"> Shipping FAQs</a>
 						</p>
-						<button onclick="location.href='ShippingMethod.html'" type="button" class="btn btn-default"
-							style="float: right;">Change Shipping Method</button>
+						<button onclick="location.href='ShippingMethod.html'"
+							type="button" class="btn btn-default" style="float: right;">Change
+							Shipping Method</button>
 						<br>
 					</div>
 				</div>
@@ -92,16 +104,18 @@ $(function(){
 				<div>
 					<form class="form-horizontal" role="form">
 						<div class="form-group">
-							<label for="inputCreditCard" class="col-sm-2 control-label">Credit
-								Card </label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="inputCreditCard">
-							</div>
-						</div>
-						<div class="form-group">
 							<label for="inputCardNumber" class="col-sm-2 control-label">Card
 								Number </label>
-							<div class="col-sm-10">
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="inputCardNumber">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="inputCardNumber">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="inputCardNumber">
+							</div>
+							<div class="col-sm-2">
 								<input type="text" class="form-control" id="inputCardNumber">
 							</div>
 						</div>
@@ -121,6 +135,15 @@ $(function(){
 									<option value="2017">2017</option>
 								</select>
 							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputCardNumber" class="col-sm-2 control-label">CVV
+								code </label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="inputCVV">
+							</div>
+							<a id="modal-164283" href="#modal-container-164283" role="button"
+								class="btn" data-toggle="modal">Where to find CVV code</a>
 						</div>
 						<div class="form-group">
 							<label for="inputBillingAdd" class="col-sm-2 control-label">Billing
@@ -173,8 +196,8 @@ $(function(){
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button onclick="location.href='ReviewOrder.html'" type="button" class="btn btn-primary"
-									style="float: right;">Continue</button>
+								<button onclick="location.href='ReviewOrder.html'" type="button"
+									class="btn btn-primary" style="float: right;">Continue</button>
 							</div>
 						</div>
 					</form>
@@ -208,7 +231,9 @@ $(function(){
 					style="float: right;">Submit Order</button>
 			</div>
 		</div>
-	</div><br><br>
+	</div>
+	<br>
+	<br>
 
 
 	<div id="footer"></div>
