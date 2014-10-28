@@ -60,3 +60,11 @@
     width: 200px;
     }
     
+    #logo {
+	height:50px;
+	margin-right:10px;
+}
+
+#logo-outer {
+	padding:0; 
+}
