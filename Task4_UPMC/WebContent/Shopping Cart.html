@@ -19,7 +19,81 @@ $(function(){
   $("#footer").load("footer.html"); 
 });
 </script>
-	</script>
+<script>
+function update() {
+    var a = document.getElementById("quantity1").value;
+    if (parseInt(a) < 0) a = 0;
+    document.getElementById("quantity1").value = parseInt(a);
+    var b = document.getElementById("quantity2").value;
+    if (parseInt(b) < 0) b = 0;
+    document.getElementById("quantity2").value = parseInt(b);
+    var c = document.getElementById("price1").value;
+    var d = document.getElementById("price2").value;
+    document.getElementById("total1").value = "$" + (parseInt(a) * parseFloat(c)).toFixed(2);
+    document.getElementById("total2").value = "$" + (parseInt(b) * parseFloat(d)).toFixed(2);
+    document.getElementById("total").value = "$" + (parseInt(a) * parseFloat(c) + parseInt(b) * parseFloat(d)).toFixed(2);
+}
+</script>
+<script type="text/javascript">
+function add1() {
+    var a = document.getElementById("quantity1").value;
+    a = (parseInt(a) + 1);
+    if (parseInt(a) < 0) a = 0;
+    document.getElementById("quantity1").value = parseInt(a);
+    var b = document.getElementById("price1").value;
+    document.getElementById("total1").value = "$" + (parseInt(a) * parseFloat(b)).toFixed(2);
+}
+</script>
+<script type="text/javascript">
+function sub1() {
+    var a = document.getElementById("quantity1").value;
+    a = (parseInt(a) - 1);
+    if (parseInt(a) < 0) a = 0;
+    document.getElementById("quantity1").value = parseInt(a);
+    var b = document.getElementById("price1").value;
+    document.getElementById("total1").value = "$" + (parseInt(a) * parseFloat(b)).toFixed(2);
+}
+</script>
+<script type="text/javascript">
+function add2() {
+    var a = document.getElementById("quantity2").value;
+    a = (parseInt(a) + 1);
+    if (parseInt(a) < 0) a = 0;
+    document.getElementById("quantity2").value = parseInt(a);
+    var b = document.getElementById("price2").value;
+    document.getElementById("total2").value = "$" + (parseInt(a) * parseFloat(b)).toFixed(2);
+}
+</script>
+<script type="text/javascript">
+function sub2() {
+    var a = document.getElementById("quantity2").value;
+    a = (parseInt(a) - 1);
+    if (parseInt(a) < 0) a = 0;
+    document.getElementById("quantity2").value = parseInt(a);
+    var b = document.getElementById("price2").value;
+    document.getElementById("total2").value = "$" + (parseInt(a) * parseFloat(b)).toFixed(2);
+}
+</script>
+<script type="text/javascript">
+function remove1() {
+	var a = confirm("Sure to remove item?");
+	if(a) {
+	    document.getElementById("quantity1").value = 0;
+    }else {
+    	return;
+    }
+}
+</script>
+<script type="text/javascript">
+function remove2() {
+	var a = confirm("Sure to remove item?");
+	if(a) {
+	    document.getElementById("quantity2").value = 0;
+    }else {
+    	return;
+    }
+}
+</script>
 	<div id="header"></div>
 	
 <div class="container">
@@ -77,11 +151,12 @@ $(function(){
 				Please review the item(s) in your cart.
 			</p>
 			<div class="row clearfix">
-				<div class="col-md-9 column">
+				<div class="col-md-8 column">
 				</div>
-			    <div class="col-md-3 column">
+			    <div class="col-md-4 column">
 				     <button type="button" class="btn btn-primary" onClick="location='http://localhost:8080/Task4_UPMC/index.html'">Continue Shopping</button>
 					 <button type="button" class="btn btn-primary" onClick="location='http://localhost:8080/Task4_UPMC/Checkout.html'">Checkout</button>
+					 <button type="button" class="btn btn-warning" onClick="update()">Update</button>
 			    </div>
 			</div>
 			<div>
@@ -98,22 +173,24 @@ $(function(){
 					</thead>
 					<tbody>
 						<tr>
-							<td><img src="img/item1.png"></td>
-							<td>Botanic Choice Thyroid Complex Capsules, 120ct</td>
-							<td>1</td>
-							<td>$19.90</td>
-							<td>$19.90</td>
-							<td><button type="button" class="btn btn-default" onClick="location='http://localhost:8080/Task4_UPMC/Shopping%20Cart%202.html'">+</button>
-							    <button type="button" class="btn btn-default" onClick="location='http://localhost:8080/Task4_UPMC/Shopping%20Cart%204.html'">-</button></td>
+							<td><a href="Product details.html"><img src="img/item1.png"></a></td>
+							<td><a href="Product details.html">Botanic Choice Thyroid Complex Capsules, 120ct</a><br><button type="button" id="remove1" class="btn btn-danger" onClick="remove1()">Remove</button></td>
+							<td><input type="number" value="1" id="quantity1"></input></td>
+							<td><input type="number" value="19.90" disabled id="price1"></td>
+							<td><input value="$19.90" disabled id="total1"></td>
+							<td><button type="button" class="btn btn-default" onClick="add1()">+</button>
+							    <button type="button" class="btn btn-default" onClick="sub1()">-</button>
+							</td>
 						</tr>
-						<tr class="active">
-							<td><img src="img/item2.png"></td>
-							<td>Absorbine Jr Pain Relieving Liquid Original</td>
-							<td>2</td>
-							<td>$9.99</td>
-							<td>$19.98</td>
-							<td><button type="button" class="btn btn-default">+</button>
-							    <button type="button" class="btn btn-default" onClick="location='http://localhost:8080/Task4_UPMC/Shopping%20Cart%201.html'">-</button></td>
+						<tr>
+							<td><a href="Product details.html"><img src="img/item2.png"></a></td>
+							<td><a href="Product details.html">Absorbine Jr Pain Relieving Liquid Original</a><br><button type="button" id="remove2" class="btn btn-danger" onClick="remove2()">Remove</button></td>
+							<td><input type="number" value="2" id="quantity2"></td>
+							<td><input type="number" value="9.99" disabled id="price2"></input></td>
+							<td><input value="$19.98" disabled id="total2"></input></td>
+							<td><button type="button" class="btn btn-default" onClick="add2()">+</button>
+							    <button type="button" class="btn btn-default" onClick="sub2()">-</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -125,10 +202,12 @@ $(function(){
 			    </div>
 			</div>
 			<div class ="row clearfix">
-			    <div class="col-md-12 column">
-			    <div class = "panel-body">
-			                             
+			    <div class="col-md-8 column">
+			    <div class = "panel-body">                         
 			    </div>
+			    </div>
+			    <div class="col-md-4 column">
+                    <p>Please hit <button type="button" class="btn btn-warning" onClick="update()">Update</button> to see the updated total price</p>
 			    </div>
 			</div>
 			<div class="row clearfix">
@@ -142,10 +221,10 @@ $(function(){
 					    </h3>
 				    </div>
 			    	<div class="panel-body">
-			    	    <div class="col-md-10 column">
+			    	    <div class="col-md-7 column">
 				        </div>
-				        <div class="col-md-2 column">
-				            $39.88
+				        <div class="col-md-5 column">
+				            <input id="total" disabled value="$39.88" style="text-align: right"></input>
 				    	</div>
 				    </div>
 			    	<div class="panel-footer">
@@ -154,11 +233,12 @@ $(function(){
 		    	</div>
 		    </div>
 			<div class="row clearfix">
-				<div class="col-md-9 column">
+				<div class="col-md-8 column">
 				</div>
-				<div class="col-md-3 column">
+				<div class="col-md-4 column">
 				     <button type="button" class="btn btn-primary" onClick="location='http://localhost:8080/Task4_UPMC/index.html'">Continue Shopping</button>
 					 <button type="button" class="btn btn-primary" onClick="location='http://localhost:8080/Task4_UPMC/Checkout.html'">Checkout</button>
+					 <button type="button" class="btn btn-warning" onClick="update()">Update</button>
 				</div>
 			</div>
 		</div>
