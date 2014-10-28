@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bootstrap 3, from LayoutIt!</title>
+  <title>Search Results</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -14,13 +14,14 @@
 	
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/star-rating.css" rel="stylesheet">
-	<link href="css/spec.css" rel="stylesheet">
-	<link href="css/style-header.css" rel="stylesheet">
-	<link href="css/slider.css" rel="stylesheet">
+		<link href="css/star-rating.css" rel="stylesheet">
+		<link href="css/slider.css" rel="stylesheet">
 	
-	
-	
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" class="cssdeck">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/style-index.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -37,30 +38,10 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
-	<script type="text/javascript" src="js/star-rating.js"></script>
-	<script type="text/javascript" src="js/slider.js"></script>
-	<script>
-	if (top.location != location) {
-    top.location.href = document.location.href ;
-  }
-		$(function(){
-			window.prettyPrint && prettyPrint();
-
-       
-        $('#sl2').slider();
-
-       
-
-       
-    });
-  </script>
-	<style>
+		<script type="text/javascript" src="js/star-rating.js"></script>
+				<script type="text/javascript" src="js/slider.js"></script>
+		
 	
-  #sl2 {
-    width: 160px;
-  }
-
-	</style>
 </head>
 
 <body>
@@ -68,6 +49,8 @@
 	<!-- Copy Start>
 ================================================== -->
 
+	<script src="js/jquery.min.js"></script>
+	<script class="cssdeck" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
 	<script type="text/javascript" src="js/typeahead.bundle.js"></script>
 	<script> 
@@ -76,11 +59,11 @@ $(function(){
   $("#footer").load("footer.html"); 
 });
 </script>
-	</script>
 	<div id="header"></div>
 <!-- Copy End>
 ================================================== -->
-	
+	<br>
+	<br>
 	
 	
 <div class="container">
@@ -91,14 +74,14 @@ $(function(){
 					<a href="index.html">Home</a> <span class="divider">/</span>
 				</li>
 				<li>
-					<a href="#">product</a> <span class="divider">/</span>
+					<a href="#">Search</a> <span class="divider">/</span>
 				</li>
 				<li class="active">
-					cold
+					aspirin
 				</li>
 			</ul>
 			<h3>
-				Product List
+				Search Results for "aspirin"
 			</h3>
 		</div>
 	</div>
@@ -224,10 +207,8 @@ $(function(){
 						<div class="panel-body">
 
 
-
-Filter by price interval: <div>
-<b>$ 1</b> <input type="text" class="span2" value="" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="[10,30]" id="sl2" > <b>$ 50</b>          
-									</div>          
+            Filter by price interval: <b></b> <div style="width: 200px;" class="slider slider-horizontal"><div class="slider-track"><div style="left: 28.2424%; width: 20.202%;" class="slider-selection"></div><div style="left: 24.2424%;" class="slider-handle round"></div><div style="left: 44.4444%;" class="slider-handle round"></div></div><div style="top: -80px; left: 151.182px;" class="tooltip top"><div class="tooltip-arrow"></div><div class="tooltip-inner">250 : 450</div></div><input style="" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" id="sl2" type="text"></div> <b></b>
+          
 									</div>
 					</div>
 				</div>
@@ -252,11 +233,8 @@ Filter by price interval: <div>
 				</div>
 				<div class="col-md-2 column">
 					<div class="btn-group btn-group-xs">
-						 <button class="btn btn-default">9 items</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+						 <button class="btn btn-default">12 items</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 						<ul class="dropdown-menu">
-						<li>
-								<a href="#">12 items</a>
-							</li>
 							<li>
 								<a href="#">24 items</a>
 							</li>
@@ -309,8 +287,6 @@ Filter by price interval: <div>
 						<img alt="300x200" src="img/1.jpeg" />
 						
 						<div class="caption">
-						
-						
 							 <a id="modal-160160" href="#modal-container-160160" role="button" class="btn" data-toggle="modal">+ quick look</a>
 					
 					<div class="modal fade" id="modal-container-160160" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -318,7 +294,7 @@ Filter by price interval: <div>
 							<div class="modal-content">
 								<div class="modal-header">
 									 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-									<h4 class="modal-title" id="myModalLabel">
+									<h4 class="modal-title" id="myModalLabel"></h4>
 Quick Look								</div>
 								<div class="modal-body">
 									<div class="row clearfix">
@@ -451,7 +427,6 @@ Other Information:  Store at room temperature.
 					</h4>
 					<p>
 Bayer Aspirin Regimen Pain Reliever
-
 					</p>
 					<h4>
 					Bayer
@@ -599,7 +574,7 @@ Genuine Bayer Aspirin 325 MG Tablets
 					<h4>
 					Bayer
 					</h4>
-										<input id="4" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="xs" data-readonly="true" onclick="location.href='Product details.html'">
+										<input id="4" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="xs" data-readonly="true">
 
 							
 									
@@ -921,8 +896,6 @@ St. Joseph
 				</div>
 				<div class="col-md-2 column">
 					<img alt="140x140" src="img/11.jpeg" class="img-circle" />
-									<img alt="140x140" src="img/star4.png" />
-					
 					<p>$3.99 - $13.95
 					</p>
 					<a  href="Product details.html">Tylenol Extra Strength...</a>
@@ -931,23 +904,18 @@ St. Joseph
 				</div>
 				<div class="col-md-2 column">
 				<img alt="140x140" src="img/12.jpeg" />
-				<img alt="140x140" src="img/star3.png" />
 				<p>$5.99
 					</p>
 					<a  href="Product details.html">Tylenol Regular Strength...</a>
 				</div>
 				<div class="col-md-2 column">
 					<img alt="140x140" src="img/13.jpeg" />
-									<img alt="140x140" src="img/star3.png" />
-					
 					<p>$7.89
 					</p>
 					<a  href="Product details.html">Excedrin Magraine...</a>
 				</div>
 				<div class="col-md-2 column">
 				<img alt="140x140" src="img/14.jpeg" />
-								<img alt="140x140" src="img/star3.png" />
-				
 				<p>$14.95
 					</p>
 					<a  href="Product details.html">Excedrin Extra Strength...</a>
@@ -972,7 +940,6 @@ St. Joseph
 		
 
 <hr>
-</div>
 
 <!--Remaining section-->
 	<div id="footer"></div>
@@ -981,5 +948,4 @@ St. Joseph
 	<!-- /.container -->
 	<!-- Button trigger modal -->
 </body>
-
 </html>
