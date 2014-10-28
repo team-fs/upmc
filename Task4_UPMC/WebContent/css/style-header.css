@@ -12,6 +12,17 @@
   overflow-y: auto;
   
 }
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #6193D5;
+}
 
 .tt-dropdown-menu {
   width: 422px;
