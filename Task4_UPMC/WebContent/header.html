@@ -60,10 +60,16 @@
   
 
      
-      <div class="navbar-form navbar-right">
+      <div id="signinButton" class="navbar-form navbar-right">
       
 					<button type="submit" data-toggle="modal" data-target="#myModal"
 						class="btn btn-success">Sign in</button>
+				</div>
+				<div id="signout" class="navbar-form navbar-right">
+       Welcome, Superman!  
+       
+					<button id="signoutButton"
+						class="btn btn-success">Sign out</button>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
             <li><a href="Shopping Cart.html">My Shopping Cart</a></li>
@@ -225,7 +231,11 @@
 				.ready(
 						
 						function() {
-							
+							$('#signout').hide();
+							$('#signoutButton').click(function(e) {
+					            $('#signinButton').show();
+					            $('#signout').hide();
+					        });
 							$('#registrationForm')
 									.bootstrapValidator(
 											{
@@ -284,7 +294,15 @@
 													}
 
 												}
-											});
+											})
+											.on('success.form.bv', function(e) {
+									            // Prevent form submission
+									            e.preventDefault();
+									            $('#myModal').modal('hide');
+									            $('#signinButton').hide();
+									            $('#signout').show();
+											 });
+									            
 							$('#loginForm')
 									.bootstrapValidator(
 											{
@@ -343,7 +361,14 @@
 													}
 
 												}
-											});
+											})
+											.on('success.form.bv', function(e) {
+									            // Prevent form submission
+									            e.preventDefault();
+									            $('#myModal').modal('hide');
+									            $('#signinButton').hide();
+									            $('#signout').show();
+									        });
 							
 							
 						
