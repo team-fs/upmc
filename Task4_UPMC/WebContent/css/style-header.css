@@ -19,9 +19,9 @@
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  color: #262626;
+  color: #fff;
   text-decoration: none;
-  background-color: #6193D5;
+  background-color: #0097cf;
 }
 
 .tt-dropdown-menu {
