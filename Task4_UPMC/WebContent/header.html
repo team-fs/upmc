@@ -1,4 +1,5 @@
 <link href="css/style-header.css" rel="stylesheet">
+<script src="js/handlebars-v2.0.0.js"></script>
 <Nav  class = "navbar navbar-default navbar-fixed-top"  role = "navigation" > 
   <div  class = "container-fluid" > 
     <! - Brand and toggle get grouped for better mobile display -> 
@@ -47,7 +48,7 @@
       </ul>
       <div class="navbar-form navbar-left"   id="search">
         <div id="scrollable-dropdown-menu">
-  <input class="typeahead" size="40" type="text" placeholder="Search" >
+  <input id="typeaheadinput" class="typeahead" size="40" type="text" placeholder="Search" >
   
 </div>
 
@@ -172,6 +173,30 @@
 <br><br><br>
 
 	<script>
+	function createCookie(name,value,days) {
+	    if (days) {
+	        var date = new Date();
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        var expires = "; expires="+date.toGMTString();
+	    }
+	    else var expires = "";
+	    document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function readCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+
+	function eraseCookie(name) {
+	    createCookie(name,"",-1);
+	}
 	var substringMatcher = function(strs) {
 		  return function findMatches(q, cb) {
 		    var matches, substrRegex;
@@ -189,6 +214,11 @@
 		        // the typeahead jQuery plugin expects suggestions to a
 		        // JavaScript object, refer to typeahead docs for more info
 		        matches.push({ value: str });
+		        matches.push({value: '&nbsp;&nbsp;&nbsp;&nbsp;in Diet & Fitness'});
+		        matches.push({value: '&nbsp;&nbsp;&nbsp;&nbsp;in Household'});
+		        matches.push({value: '&nbsp;&nbsp;&nbsp;&nbsp;in Medicines & Treatments'});
+		        matches.push({value: '&nbsp;&nbsp;&nbsp;&nbsp;in Personal Care'});
+		        
 		      }
 		    });
 		 
@@ -201,17 +231,25 @@
 		 
 		$('#scrollable-dropdown-menu .typeahead').typeahead({
 		  hint: false,
-		  highlight: true,
-		  minLength: 1
+		  highlight: false,
+		  minLength: 1,
+		
 		},
+		
+		
 		{
 		  name: 'states',
 		  displayKey: 'value',
-		  source: substringMatcher(states)
+		  source: substringMatcher(states),
+		 
 		});
+		$('input.typeahead').on('typeahead:cursorchanged', function(event, selection) {
+			$('#typeaheadinput').val('Aspirin');
+			 
+			});
 		
 		$('input.typeahead').on('typeahead:selected', function(event, selection) {
-			  
+			$('#typeaheadinput').val('Aspirin');
 			  // the second argument has the info you want
 			  window.location = 'Searchresults.html';
 			  
@@ -221,21 +259,34 @@
 		
 		$('input.typeahead').on('keyup', this, function (event) {
 	        if (event.keyCode == 13) {
+	        	$('#typeaheadinput').val('Aspirin');
 	        	 window.location = 'Searchresults.html';
 	        }
 	    });
 		$('#searchButton').click(function (e) {
+			$('#typeaheadinput').val('Aspirin');
 			 window.location = 'Searchresults.html';
 		});
 		$(document)
 				.ready(
 						
 						function() {
-							$('#signout').hide();
+							
+							var x = readCookie('userName')
+				            if (x) {
+				            	$('#signinButton').hide();
+								
+				            }
+				            else {
+				            	$('#signout').hide();
+							
+				            }
 							$('#signoutButton').click(function(e) {
 					            $('#signinButton').show();
 					            $('#signout').hide();
+					            eraseCookie('userName');
 					        });
+							
 							$('#registrationForm')
 									.bootstrapValidator(
 											{
@@ -301,6 +352,7 @@
 									            $('#myModal').modal('hide');
 									            $('#signinButton').hide();
 									            $('#signout').show();
+									            createCookie('userName','Superman',7);
 											 });
 									            
 							$('#loginForm')
@@ -368,6 +420,9 @@
 									            $('#myModal').modal('hide');
 									            $('#signinButton').hide();
 									            $('#signout').show();
+									            createCookie('userName','Superman',7);
+
+									            
 									        });
 							
 							
