@@ -1,437 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Bayer Aspirin Regimen Pain Reliever</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="utf-8">
+<title>Bayer Aspirin Regimen Pain Reliever</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
-	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
-	<!--script src="js/less-1.3.3.min.js"></script-->
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-	
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/star-rating.css" rel="stylesheet">
-	<link href="css/spec.css" rel="stylesheet">
-	<link href="css/style-header.css" rel="stylesheet">
-	
+<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+<!--script src="js/less-1.3.3.min.js"></script-->
+<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-  <![endif]-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/star-rating.css" rel="stylesheet">
+<link href="css/spec.css" rel="stylesheet">
+<link href="css/style-header.css" rel="stylesheet">
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="img/favicon.png">
-  
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
-	<script type="text/javascript" src="js/star-rating.js"></script>
-	<script type="text/javascript">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+<!-- Fav and touch icons -->
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="img/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="img/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="img/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="img/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="img/favicon.png">
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/star-rating.js"></script>
+<script type="text/javascript">
 	function popup() {
 		window.open("Write a review.html", "", "toolbar=no");
 		return false;
 	}
-	</script>
-	<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-	<script type="text/javascript" src="js/typeahead.bundle.js"></script>
-	<script>
-		$(function() {
-			$("#header").load("header.html");
-			$("#footer").load("footer.html");
-		});
-	</script>
+</script>
+<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="js/typeahead.bundle.js"></script>
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	});
+</script>
+<script type="text/javascript">
+	function add1() {
+		var a = document.getElementById("quantity1").value;
+		a = (parseInt(a) + 1);
+		if (parseInt(a) < 0)
+			a = 0;
+		document.getElementById("quantity1").value = parseInt(a);
+		var b = document.getElementById("price1").value;
+		document.getElementById("total1").value = "$"
+				+ (parseInt(a) * parseFloat(b)).toFixed(2);
+	}
+</script>
+<script type="text/javascript">
+	function sub1() {
+		var a = document.getElementById("quantity1").value;
+		a = (parseInt(a) - 1);
+		if (parseInt(a) < 0)
+			a = 0;
+		document.getElementById("quantity1").value = parseInt(a);
+		var b = document.getElementById("price1").value;
+		document.getElementById("total1").value = "$"
+				+ (parseInt(a) * parseFloat(b)).toFixed(2);
+	}
+</script>
+<script>
+	$('#myTooltip').on('show.bs.tooltip', function() {
+		$('#myTooltip').tooltip('show');
+	});
+</script>
+</head>
+<body>
 	<div id="header"></div>
-	
-	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<ul class="breadcrumb">
-				<li>
-					<a href="index.html">Home</a> <span class="divider">/</span>
-				</li>
-				<li>
-					<a href="productlist.html">Shop Products</a> <span class="divider">/</span>
-				</li>
-				<li>
-					<a href="productlist.html">Medicine and Treatment</a> <span class="divider">/</span>
-				</li>
-				<li class="active">
-					Bayer Aspirin Regimen Pain Reliever
-				</li>
-			</ul>
-		</div>
-	</div>
-	</div>
-	<br>
-	<br>
-	<br>
-	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-6 column">
-			<img alt="420x420" src="img/low dose aspirin.jpg">
-		</div>
-		<div class="col-md-4 column">
-			<h3>
-				<strong>Bayer Aspirin Regimen Pain Reliever</strong>
-			</h3>
-			<p>
-			    <input id="input-21a" value="4" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
-			</p>
-			<a title="popup" onclick="return popup()">Write My Review</a>
-			<hr>
-			<p class="text-left">
-				<strong>Price</strong>: $11.99
-			</p>
-			<hr>
-			<div class="quantity-input">
-				<div class="btn-group">
-				  <button type="button" class="btn btn-default">Quantity</button>
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-				    <span class="caret"></span>
-				    <span class="sr-only">Toggle Dropdown</span>
-				  </button>
-				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li class="divider"></li>
-				    <li><a href="#">Others</a></li>
-				  </ul>
-				</div>
-				&nbsp;&nbsp;<span class="label label-success">In Stock</span>
-				<!-- <div class = "row clearfix">
-					<div class = "col-md-5 column"> -->
-						<!-- <form>
-							<strong>Quantity:</strong>&nbsp;&nbsp;
-							
-							<input type="text" name="quantities" size="2">
-							
-						</form> -->
-					<!-- </div>
-				<div class = "col-md-7 column"> -->
-			    <!-- </div> -->
-			</div>
-			<hr>
-			<div class="add to cart">
-				<button onclick="location.href='Shopping Cart.html'" type="button" class="btn btn-primary custom">Add to Cart</button>
-				<br>
-				<br>
-				<button type="button" class="btn btn-info custom">Find in a Store</button>
-			</div>
-		
-			<hr>
-			<img alt="facebook" src="https://www.facebook.com/images/fb_icon_325x325.png" width="30" height="30">  <img alt="twitter" src="https://blog.twitter.com/sites/all/themes/gazebo/img/ios_homescreen_icon.png" width="30" height="30">  <img alt="pinterest" src="http://img3.wikia.nocookie.net/__cb20140925232226/carebears/images/c/c4/Pinterest-icon.png" width="30" height="30"> <img alt="google+" src="http://icons.iconarchive.com/icons/marcus-roberto/google-play/512/Google-plus-icon.png" width="30" height="30">
-		</div>
-		
-		<div class="col-md-2 column">
-			<img alt="special-offer" src="http://www.paragonautofinishing.co.uk/media/special.png" width="180" height="100">
-			<br>
-			<br>
-			<br>
-			<img alt="shipping" src="http://www.iconpng.com/png/windows8_icons2/free_shipping.png" width="100" height="100"> <p>FREE SHIPPING on orders over $35!</p>
-			<br>
-			<br>
-			<img alt="deal" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/price_tag.png" width="100" height="100"> <p>BUY 1 GET 1 50% OFF WITH UPMC CARD</p>
-		</div>
-	</div>
-	</div>
-	
-	<br>
-	<br>
-	<br>
-	<hr>
-	<br>
-	<br>
-	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="tabbable" id="tabs-942812">
-				<ul class="nav nav-tabs">
-					<li>
-						<a href="#panel-972534" data-toggle="tab">Overview</a>
-					</li>
-					<li class="active">
-						<a href="#panel-101117" data-toggle="tab">Ingredients</a>
-					</li>
-					<li>
-						<a href="#panel-3" data-toggle="tab">Directions</a>
-					</li>
-					<li>
-						<a href="#panel-4" data-toggle="tab">Warnings</a>
-					</li>
-					<li>
-						<a href="#panel-5" data-toggle="tab">Rating and Reviews</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-				<br>
-					<div class="tab-pane" id="panel-972534">
-						<ul>
-			    			<li>
-								<strong>Health Concern</strong>: Arthritis, Muscle Pain
-							</li>
-							<li>
-								<strong>Product Form</strong>: Tablet
-							</li>
-								<li>
-								<strong>Suggested Age</strong>: 18 Years and Up
-							</li>
-							<li>
-								<strong>Size</strong>: 300 Coeated Capsules
-							</li>
-							<li>
-								<strong>Place of Production</strong>: Made in Spain
-							</li>
-						</ul>
-					</div>
-					<br>
-					<div class="tab-pane active" id="panel-101117">
-						<span class="label label-primary">Active Ingredients</span>
-						<br>
-						<br>
-						<ul>
-							<li>
-								In Each Tablet: <a style="color: black" href="http://www.webmd.com/drugs/2/drug-1082-3/aspirin-oral/aspirin-oral/details">Aspirin</a> (81 mg) (NSAID)
-							</li>
-						</ul>
-						<span class="label label-primary">Inactive Ingredients</span>
-						<br>
-						<br>
-						<ul>
-							<li>
-								Black Iron Oxide
-							</li>
-							<li>	
-								Brown Iron Oxide
-							</li>
-							<li>	
-								Carnauba Wax 
-							</li>	
-							<li>
-								Corn Starch
-							</li>
-							<li>
-								D&C Yellow 10 Aluminum Lake 
-							</li>
-							<li>	
-								FD&C Yellow 6 Aluminum Lake
-							</li>
-							<li>	
-								Hypromellose, Methacrylic Acid 
-							</li>
-							<li>	
-								Copolymer Type C 
-							</li>
-							<li>	
-								Polysorbate 80 
-							</li>
-							<li>	
-								Powdered Cellulose 
-							</li>
-							<li>	
-								Propylene Glycol 
-							</li>
-							<li>	
-								Shellac
-							</li>
-							<li>	
-								Sodium Lauryl Sulfate 
-							</li>
-							<li>	
-								Triacetin, Triethyl Citrate
-							</li>
-						</ul>
-					</div>
 
-					<div class="tab-pane" id="panel-3">
-						<p>
-							Drink a full glass of water with each dose.
-						</p>
-						<span class="label label-primary">Adults and children 12 years and over</span>
-						<p>
-							Take 4 to 8 tablets every 4 hours not to exceed 48 tablets in 24 hours unless directed by a doctor.
-						</p>
-						<span class="label label-primary">Children under 12 years</span>
-						<p>
-							Consult a doctor
-						</p>
-						<span class="label label-primary">Other Information</span>
-						<p>
-							Store at room temperature
-						</p>
-					</div>
-					<div class="tab-pane" id="panel-4">
-						<p>
-							Aspirin is not appropriate for everyone, so be sure to talk to your doctor before you begin an aspirin regimen.<br>
-							<br>
-							<strong>Reye's syndrome</strong>: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product.  When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye's syndrome, a rare but serious illness.<br>
-							<br>
-							<strong>Allergy alert</strong>:  Aspirin may cause a severe allergic reaction which may include:
-						</p>
-						<ul>
-							<li>
-								Hives
-							</li>
-							<li>
-								Facial swelling
-							<li>
-								Asthma (wheezing)
-							</li>
-							<li>
-								Shock
-							</li>
-						</ul>
-						<p>
-							<strong>Stomach bleeding warning</strong>:  This product contains an NSAID, which may cause severe stomach bleeding.  The chance is higher if you
-						</p>
-						<ul>
-							<li>
-								Are age 60 or older
-							</li>
-							<li>	
-								Have had stomach ulcers or bleeding problems
-							</li>
-							<li>	
-								Take a blood thinning (anticoagulant) or steroid drug 
-							</li>	
-							<li>
-								Take other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others)
-							</li>
-							<li>
-								Have 3 or more alcoholic drinks every day while using this product 
-							</li>
-							<li>	
-								Take more or for a longer time than directed
-							</li>
-						</ul>
-							<p>
-							<strong>Do not use</strong> if you are allergic to aspirin or any other pain reliever/fever reducer.<br>
-							<strong>Ask a doctor before use if</strong>
-							</p>
-						<ul>
-							<li>
-								Stomach bleeding warning applies to you
-							</li>
-							<li>	
-								You have a history of stomach problems, such as heartburn
-							</li>
-							<li>	
-								You have high blood pressure, heart disease, liver cirrhosis, or kidney disease
-							</li>	
-							<li>
-								You are taking a diuretic
-							</li>
-							<li>
-								You have asthma
-							</li>
-						</ul>
-						<p>	
-							<strong>Ask a doctor or pharmacist before use if you are</strong>taking a prescription drug for
-						</p>
-						<ul>
-							<li>
-								Gout
-							</li>
-							<li>	
-								Diabetes
-							</li>
-							<li>	
-								Arthritis
-							</li>	
-						</ul>
-						<p>
-							<strong>Stop use and ask a doctor if</strong>
-						</p>
-						<ul>
-							<li>
-								An allergic reaction occurs. Seek medical help right away
-							</li>
-							<li>	
-								You experience any of the following signs of stomach bleeding:
-							</li>
-								<ul>
-									<li>
-										Feel faint
-									</li>
-									<li>	
-										Vomit blood
-									</li>
-									<li>
-										Have bloody or black stools
-									</li>
-									<li>	
-										Have stomach pain that does not get better
-									</li>
-								</ul>
-							<li>	
-								Pain gets worse or lasts more than 10 days
-							</li>
-							<li>
-								Redness or swelling is present
-							</li>
-							<li>	
-								New symptoms occur
-							</li>
-							<li>	
-								Ringing in the ears or a loss of hearing occurs
-							</li>
-						</ul>
-						<p>
-							<strong>If pregnant or breast-feeding</strong>, ask a health professional before use.  It is especially important not to use aspirin during the last 3 months of pregnancy unless definitely directed to do so by a doctor because it may cause problems in the unborn child or complications during delivery.<br>
-							<br>
-							<strong>Keep out of reach of children</strong>. In case of overdose, get medical help or contact a Poison Control Center right away.
-						</p>
-					</div>
-					<div class="tab-pane" id="panel-5">
-						<div class = "row clearfix">
-							<div class = "col-md-4 column">
-								<p>Average Rating</p>
-								<input id="input-21a" value="4" type="number" class="rating" min=0 max=5 step=0.5 data-size="sm" data-readonly="true">
-								<br>
-								<button title="popup" type="button" class="btn btn-primary" onclick="return popup()">Write a Review</button>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<ul class="breadcrumb">
+					<li><a href="index.html">Home</a> <span class="divider">/</span>
+					</li>
+					<li><a href="productlist.html">Shop Products</a> <span
+						class="divider">/</span></li>
+					<li><a href="productlist.html">Medicine and Treatment</a> <span
+						class="divider">/</span></li>
+					<li class="active">Bayer Aspirin Regimen Pain Reliever</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-5 column">
+				<img alt="420x420" src="img/low dose aspirin.jpg" width="400"
+					height="400" style="position: relative; top: 50px">
+			</div>
+			<div class="col-md-5 column">
+				<h3>
+					<strong>Bayer Aspirin Regimen Pain Reliever</strong>
+				</h3>
+				<p>
+					<img alt="rating" src="img/rating.png">
+				</p>
+				<a title="popup" onclick="return popup()">Write My Review</a>
+				<hr>
+				<p class="text-left" style="font-size: 150%">
+					<strong>Price: $11.99</strong>
+				</p>
+				<hr>
+				<div class="quantity-input">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="input-group">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">-</button>
+								</span> <input type="text" id="quantity" value="1" class="form-control"
+									style="text-align: center"> <span
+									class="input-group-btn">
+									<button class="btn btn-default" type="button">+</button>
+								</span>
 							</div>
-							<div class = "col-md-8 column">
-								<input id="input-21a" value="5" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
-								<p>
-									<strong>Highly Effective Product for Adults</strong><br>
-									I've used this cherry flavored low-dose aspirin for years for everything from a sore throat (let several dissolve in your mouth), to fevers, to sinus pressure, to headaches (I usually take a few with a no-food-coloring, no-artificial-flavoring Gatorade), to muscle aches. I may start with just two tablets, wait 15 minutes, and take more if I need them, but often I don't. Never have I experienced any bad side-effects, and that is very unusual for me because I am very, very sensitive to medications. The cherry flavored tablets are much easier for me to take, even easier than the orange flavored tablets. I usually purchase 4 or more bottles at a time, as I keep one in my purse, one in my nightstand, one in my travel bag, and one in the medicine cabinet. When friends ask if I have anything for a headache, I offer them this cherry-flavored low-dose aspirin, and even if they ask for 8 of them, I feel okay giving them this product as I believe it is very safe and effective.
-								</p>
-								<p class="text-muted">
-									<small>Written by John S from Pittsburgh | Sep 25, 2014</small>
-								</p>
-								<hr>
-								<input id="input-21a" value="3" type="number" class="rating" min=0 max=5 step=0.5 data-size="xs" data-readonly="true">
-								<p>
-									<strong>cardiac and stroke prevention</strong><br>
-									Daily use to prevent cardiac and stroke events. Palatable, easy to take, with lower risk of side effects.
-								</p>
-								<p class="text-muted">
-									<small>Written by Patrick L from New York | Aug 15, 2014</small>
-								</p>
-				
-			   				</div>
 						</div>
+						<div class="col-lg-8">
+							<p
+								style="color: #5cb85c; position: relative; top: 9px; font-weight: bold">In
+								Stock</p>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="add to cart">
+					<button onclick="location.href='Shopping Cart.html'" type="button"
+						class="btn btn-primary custom">Add to Cart</button>
+					<br> <br>
+					<button type="button" class="btn btn-info custom">Find in
+						a Store</button>
+				</div>
+				<hr>
+				<div class="social-media">
+					<p style="font-size: 110%">Share our product on:</p>
+					<img alt="facebook" src="img/facebook.png" width="30" height="30"">
+					<img alt="twitter" src="img/twitter.png" width="30" height="30">
+					<img alt="pinterest" src="img/Pinterest.png" width="30" height="30">
+					<img alt="google+" src="img/Google-plus.png" width="30" height="30">
+				</div>
+			</div>
+			<div class="col-md-2 column">
+				<img alt="special-offer" src="img/special offer.png" width="180"
+					height="100"> <br> <br> <br> <img
+					alt="shipping" src="img/free_shipping.png" width="100" height="100"
+					style="position: relative; left: 50px">
+				<p style="position: relative; left: 40px">FREE SHIPPING on
+					orders over $35!</p>
+				<br> <br> <img alt="deal" src="img/price_tag.png"
+					width="100" height="100" style="position: relative; left: 50px">
+				<p style="position: relative; left: 30px">BUY 1 GET 1 50% OFF
+					WITH UPMC CARD</p>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="tabbable" id="tabs-942812">
+					<ul class="nav nav-tabs">
+						<li><a href="#panel-972534" data-toggle="tab">Overview</a></li>
+						<li class="active"><a href="#panel-101117" data-toggle="tab">Ingredients</a>
+						</li>
+						<li><a href="#panel-3" data-toggle="tab">Directions</a></li>
+						<li><a href="#panel-4" data-toggle="tab">Warnings</a></li>
+						<li><a href="#panel-5" data-toggle="tab">Rating and
+								Reviews</a></li>
+					</ul>
+					<div class="tab-content">
+						<br>
+						<div class="tab-pane" id="panel-972534">
+							<ul>
+								<li><strong>Health Concern</strong>: Arthritis, Muscle Pain
+								</li>
+								<li><strong>Product Form</strong>: Tablet</li>
+								<li><strong>Suggested Age</strong>: 18 Years and Up</li>
+								<li><strong>Size</strong>: 300 Coeated Capsules</li>
+								<li><strong>Place of Production</strong>: Made in Spain</li>
+							</ul>
+						</div>
+						<br>
+						<div class="tab-pane active" id="panel-101117">
+							<p style="font-size: 125%">
+								<strong>Active Ingredients:</strong>
+							</p>
+							<ul>
+								<li>In Each Tablet: <a id="myTooltip"
+									title="Click on the words in blue to see an explanation of the chemical!"
+									href="http://www.webmd.com/drugs/2/drug-1082-3/aspirin-oral/aspirin-oral/details">Aspirin</a>&nbsp;(81mg) (NSAID)
+								</li>
+							</ul>
+							<p style="font-size: 125%">
+								<strong>Inactive Ingredients:</strong>
+							</p>
+							<ul>
+								<li>Black Iron Oxide</li>
+								<li>Brown Iron Oxide</li>
+								<li>Carnauba Wax</li>
+								<li>Corn Starch</li>
+								<li>D&C Yellow 10 Aluminum Lake</li>
+								<li>FD&C Yellow 6 Aluminum Lake</li>
+								<li>Hypromellose, Methacrylic Acid</li>
+								<li>Copolymer Type C</li>
+								<li>Polysorbate 80</li>
+								<li>Powdered Cellulose</li>
+								<li>Propylene Glycol</li>
+								<li>Shellac</li>
+								<li>Sodium Lauryl Sulfate</li>
+								<li>Triacetin, Triethyl Citrate</li>
+							</ul>
+						</div>
+
+						<div class="tab-pane" id="panel-3">
+							<p>Drink a full glass of water with each dose.</p>
+							<p style="font-size: 125%">
+								<strong>Adults and children 12 years and over:</strong>
+							</p>
+							<p>Take 4 to 8 tablets every 4 hours not to exceed 48 tablets
+								in 24 hours unless directed by a doctor.</p>
+							<p style="font-size: 125%">
+								<strong>Children under 12 years old:</strong>
+							</p>
+							<p>Consult a doctor</p>
+							<p style="font-size: 125%">
+								<strong>Other information:</strong>
+							</p>
+							<p>Store at room temperature</p>
+						</div>
+						<div class="tab-pane" id="panel-4">
+							<p>
+								Aspirin is not appropriate for everyone, so be sure to talk to
+								your doctor before you begin an aspirin regimen.<br> <br>
+								<strong>Reye's syndrome</strong>: Children and teenagers who
+								have or are recovering from chicken pox or flu-like symptoms
+								should not use this product. When using this product, if changes
+								in behavior with nausea and vomiting occur, consult a doctor
+								because these symptoms could be an early sign of Reye's
+								syndrome, a rare but serious illness.<br> <br> <strong>Allergy
+									alert</strong>: Aspirin may cause a severe allergic reaction which may
+								include:
+							</p>
+							<ul>
+								<li>Hives</li>
+								<li>Facial swelling
+								<li>Asthma (wheezing)</li>
+								<li>Shock</li>
+							</ul>
+							<p>
+								<strong>Stomach bleeding warning</strong>: This product contains
+								an NSAID, which may cause severe stomach bleeding. The chance is
+								higher if you
+							</p>
+							<ul>
+								<li>Are age 60 or older</li>
+								<li>Have had stomach ulcers or bleeding problems</li>
+								<li>Take a blood thinning (anticoagulant) or steroid drug</li>
+								<li>Take other drugs containing prescription or
+									nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or
+									others)</li>
+								<li>Have 3 or more alcoholic drinks every day while using
+									this product</li>
+								<li>Take more or for a longer time than directed</li>
+							</ul>
+							<p>
+								<strong>Do not use</strong> if you are allergic to aspirin or
+								any other pain reliever/fever reducer.<br> <strong>Ask
+									a doctor before use if</strong>
+							</p>
+							<ul>
+								<li>Stomach bleeding warning applies to you</li>
+								<li>You have a history of stomach problems, such as
+									heartburn</li>
+								<li>You have high blood pressure, heart disease, liver
+									cirrhosis, or kidney disease</li>
+								<li>You are taking a diuretic</li>
+								<li>You have asthma</li>
+							</ul>
+							<p>
+								<strong>Ask a doctor or pharmacist before use if you
+									are</strong>taking a prescription drug for
+							</p>
+							<ul>
+								<li>Gout</li>
+								<li>Diabetes</li>
+								<li>Arthritis</li>
+							</ul>
+							<p>
+								<strong>Stop use and ask a doctor if</strong>
+							</p>
+							<ul>
+								<li>An allergic reaction occurs. Seek medical help right
+									away</li>
+								<li>You experience any of the following signs of stomach
+									bleeding:</li>
+								<ul>
+									<li>Feel faint</li>
+									<li>Vomit blood</li>
+									<li>Have bloody or black stools</li>
+									<li>Have stomach pain that does not get better</li>
+								</ul>
+								<li>Pain gets worse or lasts more than 10 days</li>
+								<li>Redness or swelling is present</li>
+								<li>New symptoms occur</li>
+								<li>Ringing in the ears or a loss of hearing occurs</li>
+							</ul>
+							<p>
+								<strong>If pregnant or breast-feeding</strong>, ask a health
+								professional before use. It is especially important not to use
+								aspirin during the last 3 months of pregnancy unless definitely
+								directed to do so by a doctor because it may cause problems in
+								the unborn child or complications during delivery.<br> <br>
+								<strong>Keep out of reach of children</strong>. In case of
+								overdose, get medical help or contact a Poison Control Center
+								right away.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-5">
+							<div class="row clearfix">
+								<div class="col-md-4 column">
+									<p>
+										&nbsp;&nbsp;<strong>Average Rating</strong>
+									</p>
+									<img alt="rating" src="img/rating2.png"> <br> <br>
+									&nbsp;
+									<button title="popup" type="button" class="btn btn-primary"
+										onclick="return popup()">Write a Review</button>
+								</div>
+								<div class="col-md-8 column">
+									<p style="font-size: 125%; font-weight: bold">There are 2
+										customer reviews:</p>
+									<hr>
+									<img alt="rating" src="img/rating3.png">
+									<p>
+										<strong>Highly Effective Product for Adults</strong><br>
+										I've used this cherry flavored low-dose aspirin for years for
+										everything from a sore throat (let several dissolve in your
+										mouth), to fevers, to sinus pressure, to headaches (I usually
+										take a few with a no-food-coloring, no-artificial-flavoring
+										Gatorade), to muscle aches. I may start with just two tablets,
+										wait 15 minutes, and take more if I need them, but often I
+										don't. Never have I experienced any bad side-effects, and that
+										is very unusual for me because I am very, very sensitive to
+										medications. The cherry flavored tablets are much easier for
+										me to take, even easier than the orange flavored tablets. I
+										usually purchase 4 or more bottles at a time, as I keep one in
+										my purse, one in my nightstand, one in my travel bag, and one
+										in the medicine cabinet. When friends ask if I have anything
+										for a headache, I offer them this cherry-flavored low-dose
+										aspirin, and even if they ask for 8 of them, I feel okay
+										giving them this product as I believe it is very safe and
+										effective.
+									</p>
+									<p class="text-muted">
+										<small>Written by John S from Pittsburgh | Sep 25,
+											2014</small>
+									</p>
+									<hr>
+									<img alt="rating" src="img/rating4.png">
+									<p>
+										<strong>cardiac and stroke prevention</strong><br> Daily
+										use to prevent cardiac and stroke events. Palatable, easy to
+										take, with lower risk of side effects.
+									</p>
+									<p class="text-muted">
+										<small>Written by Patrick L from New York | Aug 15,
+											2014</small>
+									</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
-	
 	<br>
 	<hr>
 	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3 style="font-weight: bold; font-size: 120%; text-align: center">
+					You might also like:</h3>
+			</div>
+		</div>
+		<br>
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+				<button class="btn btn-default" type="button"
+					style="position: relative; top: 30px; left: 60px">
+					<em class="glyphicon glyphicon-chevron-left"></em>
+				</button>
+			</div>
+			<div class="col-md-2 column">
+				<img alt="140x140" src="img/11.jpeg" class="img-circle" /> <img
+					alt="140x140" src="img/star4.png" />
+				<p>$3.99 - $13.95</p>
+				<a href="Product details.html">Tylenol Extra Strength...</a>
+			</div>
+			<div class="col-md-2 column">
+				<img alt="140x140" src="img/12.jpeg" /> <img alt="140x140"
+					src="img/star3.png" />
+				<p>$5.99</p>
+				<a href="Product details.html">Tylenol Regular Strength...</a>
+			</div>
+			<div class="col-md-2 column">
+				<img alt="140x140" src="img/13.jpeg" /> <img alt="140x140"
+					src="img/star3.png" />
+				<p>$7.89</p>
+				<a href="Product details.html">Excedrin Magraine...</a>
+			</div>
+			<div class="col-md-2 column">
+				<img alt="140x140" src="img/14.jpeg" /> <img alt="140x140"
+					src="img/star3.png" />
+				<p>$14.95</p>
+				<a href="Product details.html">Excedrin Extra Strength...</a>
+			</div>
+			<div class="col-md-2 column">
+				<button class="btn btn-default " type="button"
+					style="position: relative; top: 30px; float: left">
+					<em class="glyphicon glyphicon-chevron-right"></em>
+				</button>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<!-- <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<h3 class="text-center">
@@ -496,8 +521,10 @@
 			</div>
 		</div>
 	</div>
-</div>
-<hr>
-<div id="footer"></div>
+	</div> -->
+	<hr>
+
+	<div id="footer"></div>
+
 </body>
 </html>
